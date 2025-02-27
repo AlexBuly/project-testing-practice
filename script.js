@@ -16,3 +16,15 @@ export function calculator() {
 
     return {add, sub, mult, div}
 }
+
+
+export function caesarCipher(string, shift) {
+    let charArr = [];
+    for (let i = 0; i < string.length; i++) {
+        charArr.push(string.charCodeAt(i))
+    }
+
+    charArr = charArr.map((nums) => nums >= 65 ? nums + shift : nums);
+
+    return charArr.map((num) => String.fromCharCode(num)).join("");
+} 
