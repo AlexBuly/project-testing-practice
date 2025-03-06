@@ -1,4 +1,4 @@
-import { capitalize, reverseString, calculator, caesarCipher } from "./script.js";
+import { capitalize, reverseString, calculator, caesarCipher, analyzeArray } from "./script.js";
 
 test("Returns string with capitalized first letter" , () => {
     expect(capitalize("cat")).toBe("Cat");
@@ -19,4 +19,10 @@ test("Calculate functions", () => {
 
 test("Caesar cipher algorithm", () => {
     expect(caesarCipher("Hello, World!", 3)).toBe("Khoor, Zruog!");
-})
+    expect(caesarCipher("HeLLo",3)).toBe("KhOOr");
+    expect(caesarCipher("xyz", 3)).toBe("abc");
+});
+
+test("Average, min, max, length", () => {
+    expect(analyzeArray([1,8,3,4,2,6])).toBe("max: 8, min: 1, length: 6, average: 4");
+});
